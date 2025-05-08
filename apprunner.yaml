@@ -8,11 +8,13 @@ build:
       - npm ci
     build:
       - npm run build
+    post-build:
+      - npm install -g http-server  
 
 # Configure run phase
 run:
   runtime-version: 18
-  command: npm install -g http-server && http-server ./dist -p 3000
+  command: http-server ./build -p 3000 
   network:
     port: 3000
     env: PORT
