@@ -1,5 +1,5 @@
 version: 1.0
-runtime: nodejs22
+runtime: nodejs18
 
 # Configure build phase
 build:
@@ -8,16 +8,14 @@ build:
       - npm ci
     build:
       - npm run build
-    post-build:
-      - npm install -g http-server
   env:
     - name: NODE_ENV
       value: production
 
 # Configure run phase
 run:
-  runtime-version: 22.14.0
-  command: http-server ./dist -p 3000 
+  runtime-version: 18.x
+  command: npx serve -s dist
   network:
     port: 3000
     env: PORT
