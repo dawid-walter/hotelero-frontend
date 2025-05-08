@@ -14,7 +14,7 @@ build:
 
 # Configure run phase
 run:
-  runtime-version: 18.x
+  runtime-version: 18.20.8
   command: npx serve -s dist
   network:
     port: 3000
