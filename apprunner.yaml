@@ -10,10 +10,13 @@ build:
       - npm run build
     post-build:
       - npm install -g http-server  
+  env:
+  - name: NODE_ENV
+    value: production  
 
 # Configure run phase
 run:
-  runtime-version: 22
+  runtime-version: 22.14.0
   command: http-server ./build -p 3000 
   network:
     port: 3000
