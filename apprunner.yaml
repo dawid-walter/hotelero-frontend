@@ -1,5 +1,5 @@
 version: 1.0
-runtime: nodejs18
+runtime: nodejs22
 
 # Configure build phase
 build:
@@ -13,7 +13,7 @@ build:
 
 # Configure run phase
 run:
-  runtime-version: 18
+  runtime-version: 22
   command: http-server ./build -p 3000 
   network:
     port: 3000
